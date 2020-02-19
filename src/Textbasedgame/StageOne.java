@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.*;
 
-public class StageOne implements InterfaceOne {
+public class StageOne implements InterfaceOne{
 	int choice;
 	int moves;
 	Scanner scanner = new Scanner(System.in);
@@ -52,9 +52,9 @@ public class StageOne implements InterfaceOne {
 		if (choice == 1) {
 			mat(moves);
 		} else if (choice == 2) {
-			left();
+			left(moves);
 		} else if (choice == 3) {
-			right();
+			right(moves);
 		}else {
 			choicenotfound();
 			find();
@@ -79,14 +79,14 @@ public class StageOne implements InterfaceOne {
 			mat(moves);
 		}
 	}
-	
-	public void left() {
+	@Override
+	public void left(int moves) {
 		System.out.println(" Its really dark here ,find a clue to open the door");
 		find();
 		
 	}
-	
-	public void right() {
+	@Override
+	public void right(int moves) {
 		System.out.println("You have a window and its too dark in the house.");
 		find();
 	}
@@ -228,8 +228,19 @@ public class StageOne implements InterfaceOne {
 
 	public void open(int moves) {
 		this.moves = ++moves;
-		StageTwo Stage = new StageTwo( choice, moves);
-		Stage.open(moves);
+		StageTwo Stagetwo = new StageTwo( choice, moves);
+		Stagetwo.open(moves);
+		
+	}
+
+	@Override
+	public void forward(int moves) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void useKeys(int moves) {
+		// TODO Auto-generated method stub
 		
 	}
 }
