@@ -1,8 +1,18 @@
 package Textbasedgame;
 
+/*
+ * 
+ */
 public interface InterfaceOne {
-	public void open(int moves);
-	public void forward(int moves);
-	public void right(int moves);
-	public void left(int moves);
+	
+	/*
+	 * Open method used in Sta2geTwo
+	 */
+	public void open();
+
+	public void forward();
+
+	public void right();
+
+	public void left();
 }
