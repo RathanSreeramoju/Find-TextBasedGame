@@ -2,6 +2,11 @@ package Textbasedgame;
 
 import java.util.*;
 
+/*
+ * Here this class implements level two using the stage one parent class and 
+ * uses interface one and interface two
+ */
+
 public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	int choice;
@@ -10,12 +15,22 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	/*
 	 * Level two starts from here
+	 * 
+	 * Uses constructor to carry the moves from first stage
+	 * 
+	 * @param choice - to be chosen by the user to go further in to the game
+	 * 
+	 * @param moves - number of moves are counted which are taken by the user so
+	 * far.
 	 */
-
 	public StageTwo(int choice, int moves) {
 		super(choice, moves);
 	}
 
+	/*
+	 * implements method from interface given description about the building and a
+	 * choice is given regarding the box.
+	 */
 	@Override
 	public void open() {
 		System.out.println("\n------------------------------------------------------------------");
@@ -37,11 +52,18 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Prints Choice not found if the user selects the choice out of given options.
+	 */
 	public void choicenotfound() {
 		System.out.println("Choice not found");
 
 	}
 
+	/*
+	 * User was given a hint through a slip and choices and the number of moves will
+	 * be calculated.
+	 */
 	public void box() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -65,6 +87,9 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		}
 	}
 
+	/*
+	 * Given description about the wrong choice user has made.
+	 */
 	@Override
 	public void forward() {
 		++moves;
@@ -76,7 +101,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 	@Override
 	public void left() {
 		++moves;
-		System.out.println("There is a room in the corner  ");
+		System.out.println("There is a room in the corner and it is empty ");
 		System.out.println("\nYour Moves " + moves);
 		open();
 	}
@@ -102,10 +127,14 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Choices have been given to the user to light up the building and the moves
+	 * will counted.
+	 */
 	public void door() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
-		System.out.println("You found a Lantern and a torch on the table ");
+		System.out.println("There is a Lantern and a torch on the table ");
 		System.out.println("\n1: Take Lantern");
 		System.out.println("\n2: Take Torch");
 		System.out.println("\n\nYour Moves " + moves);
@@ -122,6 +151,9 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Description about the wrong choice user have made.
+	 */
 	public void torch() {
 		++moves;
 		System.out.println("You don't have batteries, try to find another way");
@@ -130,6 +162,10 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Description about the clue to enter in to the next level and given chpoices
+	 * to it.
+	 */
 	public void lantern() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -152,27 +188,36 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		}
 	}
 
+	/*
+	 * Message will be shown if the user make wrong choice.
+	 */
 	public void moveRight() {
 		++moves;
-		System.out.println("there is nothing here");
+		System.out.println("There is nothing here");
 		System.out.println("\n\nYour Moves " + moves);
 		lantern();
 
 	}
 
+	/*
+	 * Message will be shown if the user make wrong choice.
+	 */
 	public void moveForward() {
 		++moves;
-		System.out.println("there is nothing here");
+		System.out.println("There is nothing here");
 		System.out.println("\n\nYour Moves " + moves);
 		lantern();
 
 	}
 
+	/*
+	 * User enters in to the next level and the choice of paintings have given.
+	 */
 	public void moveLeft() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
 		System.out.println("There is a stair case. You are at the first floor of the building  ");
-		System.out.println("There are three paintings infront of you , Find your way  ");
+		System.out.println("There are three paintings infront of you, correct pianting leads you to the next clue.");
 		System.out.println("\n1: Turn LeftPainting");
 		System.out.println("\n2: Turn RightPainting");
 		System.out.println("\n3: Turn CentrePainting");
@@ -192,6 +237,9 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Message is shown if the user select first wrong choice.
+	 */
 	public void leftPainting() {
 		++moves;
 		System.out.println("Theres nothing in me");
@@ -199,6 +247,10 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		moveLeft();
 	}
 
+	/*
+	 * Message is shown if the user selects correct choice and user is given chance
+	 * to enter in to the next room.
+	 */
 	public void rightPainting() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -220,13 +272,19 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	@Override
+	/*
+	 * This is a connection to the next level using constructor.
+	 */
 	public void useKeys() {
 		++moves;
 		StageThree Stagethree = new StageThree(choice, moves);
 		Stagethree.useKeys();
 	}
 
+	/*
+	 * User has given a choice and should require a key to enter in to the next
+	 * room. If the user chooses an option he'll returns to the previous level.
+	 */
 	public void openDoor() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -247,19 +305,22 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * User has to walk 10ft in one direction to go to next room.
+	 */
 	public void centrePainting() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
-		System.out.println("You find the way when you see 10feet from you  ");
+		System.out.println("Walk in the direction where you can walk 10 feet");
 		System.out.println("\n1:Walk Right");
-		System.out.println("2: Walk Left");
+		System.out.println("\n2: Walk Left");
 		System.out.println("\nYour Moves " + moves);
 		System.out.println("\n------------------------------------------------------------------");
 		choice = scanner.nextInt();
 		if (choice == 1) {
-			walkLeft();
-		} else if (choice == 2) {
 			walkRight();
+		} else if (choice == 2) {
+			walkLeft();
 		} else {
 			choicenotfound();
 			centrePainting();
@@ -267,12 +328,18 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Message will be displayed if the user chooses wrong choice.
+	 */
 	public void walkLeft() {
 		System.out.println("This way is not 10 feet long enough");
 		centrePainting();
 
 	}
 
+	/*
+	 * Allows user to walk to right painting.
+	 */
 	public void walkRight() {
 		rightPainting();
 

@@ -8,10 +8,13 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	public StageThree(int choice, int moves) {
 		super(choice, moves);
-		
+
 	}
 
-	@Override
+	/*
+	 * user moved to the next room and has given choices again. User requires
+	 * certain clues to find the next clue.
+	 */
 	public void useKeys() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -28,29 +31,39 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 			openDrawer2();
 		} else if (choice == 3) {
 			turnOnComputer();
-		}else {
+		} else {
 			choiceNotFound();
 			useKeys();
 		}
 
 	}
 
+	/*
+	 * Lets user to turn on the computer and the message will be popped up if he
+	 * don't have password.
+	 */
 	public void turnOnComputer() {
 		++moves;
 		System.out.println("You need a password to access the computer");
 		System.out.println("\n\nYour Moves " + moves);
 		useKeys();
-		
+
 	}
 
+	/*
+	 * Lets user to open the Drawer1 and message is displayed.
+	 */
 	public void openDrawer1() {
 		++moves;
-		System.out.println("This drawer contains some papers that of no use ");
+		System.out.println("This drawer contains some papers that of no use.");
 		System.out.println("\n\nYour Moves " + moves);
 		useKeys();
 
 	}
 
+	/*
+	 * Lets user to open Drawer2 and message will be shown
+	 */
 	public void openDrawer2() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -68,6 +81,9 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Lets user to read the message/hint to the password of the computer.
+	 */
 	public void readSlip() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -86,6 +102,9 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
+	/*
+	 * Hint is displayed and choices have been provided to the user.
+	 */
 	public void readHint() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -98,33 +117,43 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 		choice = scanner.nextInt();
 		if (choice == 1) {
 			anything();
-		} else if ( choice == 2) {
+		} else if (choice == 2) {
 			something();
-		}  else if ( choice == 3) {
+		} else if (choice == 3) {
 			nothing();
 		} else {
 			choiceNotFound();
 			readSlip();
 		}
-		
+
 	}
 
+	/*
+	 * Message will be shown if the user selects the wrong choice.
+	 */
 	public void anything() {
 		++moves;
 		System.out.println("You have chosen wrong password");
 		System.out.println("\n\nYour Moves " + moves);
 		readHint();
-		
+
 	}
 
+	/*
+	 * Message will be shown if the user selects the wrong choice.
+	 */
 	public void something() {
 		++moves;
 		System.out.println("You have chosen wrong password");
 		System.out.println("\n\nYour Moves " + moves);
 		readHint();
-		
+
 	}
 
+	/*
+	 * Message will be shown if the user selects the correct choice and the game
+	 * ends here.
+	 */
 	public void nothing() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");

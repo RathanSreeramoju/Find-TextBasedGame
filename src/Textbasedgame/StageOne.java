@@ -5,14 +5,21 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.*;
 
+/*
+ * Game Starts here from stage one
+ * 
+ */
 public class StageOne implements InterfaceOne {
 	int choice;
 	int moves;
 	Scanner scanner = new Scanner(System.in);
 
 	/*
+	 * creates a stage one object that represents choice and moves.
 	 * 
+	 * @param choice that we have to choose
 	 * 
+	 * @param moves that will be counted
 	 */
 	public StageOne(int choice, int moves) {
 		this.choice = choice;
@@ -20,13 +27,13 @@ public class StageOne implements InterfaceOne {
 	}
 
 	/*
-	 * Playersetup contains name, age, gender and date of birth Moves attribute
-	 * prints the moves that palyer uses
+	 * Playersetup contains name, age, gender, date of birth and Moves attributes
+	 * prints the number of moves that player used so far
 	 */
 	public void playerSetup() {
 
 		System.out.println("Enter your name : ");
-		String playerName = scanner.nextLine();
+		String playerName = scanner.next();
 		System.out.println("Hello " + playerName + " Welcome to FIND");
 		System.out.println("Age ");
 		int age = scanner.nextInt();
@@ -40,21 +47,26 @@ public class StageOne implements InterfaceOne {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("\nYour Moves " + moves);
+		System.out.println("A Police officer got a call from unknown person and said his partner is kidnapped.");
+		System.out.println(" \nHe need to solve some puzzles to rescue him.");
+
 	}
 
 	/*
-	 * Game starts from here
+	 * Description of the game is given here and multiple choices are given to the
+	 * user. User have to make the right choices to go further in to the game and
+	 * succeed in it.
 	 * 
 	 */
 	public void find() {
 		System.out.println("\n------------------------------------------------------------------");
-		System.out.println("You are infront of the Building facing south. There are four doors to the building,");
+
+		System.out.println("\nYou are infront of the Building facing south. There are four doors to the building,");
 		System.out.println(
-				"But you have only one key to open one of the door among 4, you can see a mat under your foot ");
+				"But you have only one key to open one of the doors among 4, you can see a mat under your foot ");
 		System.out.println("1: Open mat");
-		System.out.println("2: Go left ");
-		System.out.println("3: Go right");
+		System.out.println("2: Go Left ");
+		System.out.println("3: Go Right");
 		System.out.println("\n\nYour Moves " + moves);
 		System.out.println("\n------------------------------------------------------------------");
 		choice = scanner.nextInt();
@@ -73,12 +85,11 @@ public class StageOne implements InterfaceOne {
 	/*
 	 * This method gives the option to choose card or axe to go to next step
 	 * 
-	 * @param moves will counted for every move
 	 */
 	public void mat() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
-		System.out.println("You have a card and an axe.");
+		System.out.println("You have found a card and an axe.");
 		// choose any of the option for hint
 		System.out.println("\n1: Turn card ");
 		System.out.println("\n2: Take axe");
@@ -96,7 +107,8 @@ public class StageOne implements InterfaceOne {
 	}
 
 	/*
-	 * method override from InterfaceOne It prints to find a clue to go to next step
+	 * method override from InterfaceOne, it prints to find a clue to go to next
+	 * step
 	 */
 	@Override
 	public void left() {
@@ -107,6 +119,9 @@ public class StageOne implements InterfaceOne {
 
 	}
 
+	/*
+	 * Given description of the house.
+	 */
 	@Override
 	public void right() {
 		++moves;
@@ -118,7 +133,6 @@ public class StageOne implements InterfaceOne {
 	/*
 	 * This method gives a hint to find the right door
 	 * 
-	 * @param moves will be calculate for every move
 	 */
 	public void read() {
 		++moves;
@@ -142,9 +156,8 @@ public class StageOne implements InterfaceOne {
 	}
 
 	/*
-	 * This method states to find an other way to open the door
+	 * This method states to find an other way to open the door.
 	 * 
-	 * @param moves will be calculated
 	 */
 	public void breakDoor() {
 		++moves;
@@ -166,7 +179,8 @@ public class StageOne implements InterfaceOne {
 	}
 
 	/*
-	 * This method
+	 * This method gives user 2 choices and the right one will lead him to enter in
+	 * to the house.
 	 */
 	public void takeAxe() {
 		++moves;
@@ -188,6 +202,10 @@ public class StageOne implements InterfaceOne {
 
 	}
 
+	/*
+	 * This is the method where user enters in to the door and furthers in to the
+	 * next level.
+	 */
 	public void east() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -208,6 +226,9 @@ public class StageOne implements InterfaceOne {
 
 	}
 
+	/*
+	 * User has chosen wrong door and is given two choices.
+	 */
 	public void west() {
 		++moves;
 		System.out.println("\n------------------------------------------------------------------");
@@ -226,6 +247,9 @@ public class StageOne implements InterfaceOne {
 			west();
 		}
 	}
+	/*
+	 * User has chosen wrong door and is given two choices.
+	 */
 
 	public void south() {
 		++moves;
@@ -246,25 +270,37 @@ public class StageOne implements InterfaceOne {
 		}
 	}
 
+	/*
+	 * Leaves the axe and gives the choices again to choose the right way.
+	 */
 	public void leave() {
 		mat();
 
 	}
 
+	/*
+	 * Date formatter from string to date format
+	 * 
+	 * @return returns date
+	 */
 	public static Date StringToDate(String dob) throws ParseException {
-		// Instantiating the SimpleDateFormat class
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 		// Parsing the given String to Date object
 		Date date = formatter.parse(dob);
-		System.out.println("Date object value: " + date);
+		System.out.println("Date " + date);
 		return date;
 	}
-	
 
+	/*
+	 * Gets the message if the user chooses other than the given choices.
+	 */
 	public void choicenotfound() {
 		System.out.println(" Choice not found");
 	}
 
+	/*
+	 * Connection from first stage to second using constructor.
+	 */
 	public void open() {
 		++moves;
 		StageTwo Stagetwo = new StageTwo(choice, moves);
@@ -278,8 +314,4 @@ public class StageOne implements InterfaceOne {
 
 	}
 
-	public void useKeys() {
-		// TODO Auto-generated method stub
-
-	}
 }
