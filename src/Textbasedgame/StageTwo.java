@@ -2,9 +2,12 @@ package Textbasedgame;
 
 import java.util.*;
 
-/*
- * Here this class implements level two using the stage one parent class and 
- * uses interface one and interface two
+/**
+ * This class implements level two using the stage one parent class and uses
+ * interface one and interface two
+ * 
+ * @author rathan
+ *
  */
 
 public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
@@ -13,21 +16,21 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 	int moves;
 	Scanner scanner = new Scanner(System.in);
 
-	/*
+	/**
 	 * Level two starts from here
 	 * 
 	 * Uses constructor to carry the moves from first stage
 	 * 
 	 * @param choice - to be chosen by the user to go further in to the game
 	 * 
-	 * @param moves - number of moves are counted which are taken by the user so
-	 * far.
+	 * @param moves  - number of moves are counted which are taken by the user so
+	 *               far.
 	 */
 	public StageTwo(int choice, int moves) {
 		super(choice, moves);
 	}
 
-	/*
+	/**
 	 * implements method from interface given description about the building and a
 	 * choice is given regarding the box.
 	 */
@@ -52,7 +55,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Prints Choice not found if the user selects the choice out of given options.
 	 */
 	public void choicenotfound() {
@@ -60,7 +63,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * User was given a hint through a slip and choices and the number of moves will
 	 * be calculated.
 	 */
@@ -87,7 +90,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		}
 	}
 
-	/*
+	/**
 	 * Given description about the wrong choice user has made.
 	 */
 	@Override
@@ -127,7 +130,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Choices have been given to the user to light up the building and the moves
 	 * will counted.
 	 */
@@ -151,7 +154,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Description about the wrong choice user have made.
 	 */
 	public void torch() {
@@ -162,7 +165,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Description about the clue to enter in to the next level and given chpoices
 	 * to it.
 	 */
@@ -188,7 +191,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		}
 	}
 
-	/*
+	/**
 	 * Message will be shown if the user make wrong choice.
 	 */
 	public void moveRight() {
@@ -199,7 +202,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Message will be shown if the user make wrong choice.
 	 */
 	public void moveForward() {
@@ -210,7 +213,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * User enters in to the next level and the choice of paintings have given.
 	 */
 	public void moveLeft() {
@@ -237,7 +240,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Message is shown if the user select first wrong choice.
 	 */
 	public void leftPainting() {
@@ -247,7 +250,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		moveLeft();
 	}
 
-	/*
+	/**
 	 * Message is shown if the user selects correct choice and user is given chance
 	 * to enter in to the next room.
 	 */
@@ -272,7 +275,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * This is a connection to the next level using constructor.
 	 */
 	public void useKeys() {
@@ -281,7 +284,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 		Stagethree.useKeys();
 	}
 
-	/*
+	/**
 	 * User has given a choice and should require a key to enter in to the next
 	 * room. If the user chooses an option he'll returns to the previous level.
 	 */
@@ -305,7 +308,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * User has to walk 10ft in one direction to go to next room.
 	 */
 	public void centrePainting() {
@@ -328,7 +331,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Message will be displayed if the user chooses wrong choice.
 	 */
 	public void walkLeft() {
@@ -337,7 +340,7 @@ public class StageTwo extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Allows user to walk to right painting.
 	 */
 	public void walkRight() {

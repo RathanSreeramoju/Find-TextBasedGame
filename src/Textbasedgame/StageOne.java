@@ -5,28 +5,30 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.*;
 
-/*
+/**
  * Game Starts here from stage one
  * 
+ * @author rathan
+ *
  */
 public class StageOne implements InterfaceOne {
 	int choice;
 	int moves;
 	Scanner scanner = new Scanner(System.in);
 
-	/*
+	/**
 	 * creates a stage one object that represents choice and moves.
 	 * 
 	 * @param choice that we have to choose
 	 * 
-	 * @param moves that will be counted
+	 * @param moves  that will be counted
 	 */
 	public StageOne(int choice, int moves) {
 		this.choice = choice;
 		this.moves = moves;
 	}
 
-	/*
+	/**
 	 * Playersetup contains name, age, gender, date of birth and Moves attributes
 	 * prints the number of moves that player used so far
 	 */
@@ -52,10 +54,10 @@ public class StageOne implements InterfaceOne {
 
 	}
 
-	/*
-	 * Description of the game is given here and multiple choices are given to the
-	 * user. User have to make the right choices to go further in to the game and
-	 * succeed in it.
+	/**
+	 * @Description of the game is given here and multiple choices are given to the
+	 *              user. User have to make the right choices to go further in to
+	 *              the game and succeed in it.
 	 * 
 	 */
 	public void find() {
@@ -82,7 +84,7 @@ public class StageOne implements InterfaceOne {
 		}
 	}
 
-	/*
+	/**
 	 * This method gives the option to choose card or axe to go to next step
 	 * 
 	 */
@@ -106,7 +108,7 @@ public class StageOne implements InterfaceOne {
 		}
 	}
 
-	/*
+	/**
 	 * method override from InterfaceOne, it prints to find a clue to go to next
 	 * step
 	 */
@@ -119,7 +121,7 @@ public class StageOne implements InterfaceOne {
 
 	}
 
-	/*
+	/**
 	 * Given description of the house.
 	 */
 	@Override
@@ -130,7 +132,7 @@ public class StageOne implements InterfaceOne {
 		find();
 	}
 
-	/*
+	/**
 	 * This method gives a hint to find the right door
 	 * 
 	 */
@@ -155,7 +157,7 @@ public class StageOne implements InterfaceOne {
 		}
 	}
 
-	/*
+	/**
 	 * This method states to find an other way to open the door.
 	 * 
 	 */
@@ -178,7 +180,7 @@ public class StageOne implements InterfaceOne {
 		}
 	}
 
-	/*
+	/**
 	 * This method gives user 2 choices and the right one will lead him to enter in
 	 * to the house.
 	 */
@@ -202,7 +204,7 @@ public class StageOne implements InterfaceOne {
 
 	}
 
-	/*
+	/**
 	 * This is the method where user enters in to the door and furthers in to the
 	 * next level.
 	 */
@@ -226,7 +228,7 @@ public class StageOne implements InterfaceOne {
 
 	}
 
-	/*
+	/**
 	 * User has chosen wrong door and is given two choices.
 	 */
 	public void west() {
@@ -247,7 +249,8 @@ public class StageOne implements InterfaceOne {
 			west();
 		}
 	}
-	/*
+
+	/**
 	 * User has chosen wrong door and is given two choices.
 	 */
 
@@ -270,7 +273,7 @@ public class StageOne implements InterfaceOne {
 		}
 	}
 
-	/*
+	/**
 	 * Leaves the axe and gives the choices again to choose the right way.
 	 */
 	public void leave() {
@@ -278,27 +281,26 @@ public class StageOne implements InterfaceOne {
 
 	}
 
-	/*
+	/**
 	 * Date formatter from string to date format
 	 * 
 	 * @return returns date
 	 */
 	public static Date StringToDate(String dob) throws ParseException {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-		// Parsing the given String to Date object
 		Date date = formatter.parse(dob);
 		System.out.println("Date " + date);
 		return date;
 	}
 
-	/*
+	/**
 	 * Gets the message if the user chooses other than the given choices.
 	 */
 	public void choicenotfound() {
 		System.out.println(" Choice not found");
 	}
 
-	/*
+	/**
 	 * Connection from first stage to second using constructor.
 	 */
 	public void open() {

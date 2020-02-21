@@ -2,6 +2,13 @@ package Textbasedgame;
 
 import java.util.Scanner;
 
+/**
+ * This is the Third Stage in which the user finds his brother with some clues
+ * to find
+ * 
+ * @author rathan
+ *
+ */
 public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 	String password;
 	Scanner scanner = new Scanner(System.in);
@@ -11,7 +18,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * user moved to the next room and has given choices again. User requires
 	 * certain clues to find the next clue.
 	 */
@@ -38,7 +45,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Lets user to turn on the computer and the message will be popped up if he
 	 * don't have password.
 	 */
@@ -50,7 +57,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Lets user to open the Drawer1 and message is displayed.
 	 */
 	public void openDrawer1() {
@@ -61,7 +68,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Lets user to open Drawer2 and message will be shown
 	 */
 	public void openDrawer2() {
@@ -81,7 +88,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Lets user to read the message/hint to the password of the computer.
 	 */
 	public void readSlip() {
@@ -102,7 +109,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Hint is displayed and choices have been provided to the user.
 	 */
 	public void readHint() {
@@ -128,7 +135,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Message will be shown if the user selects the wrong choice.
 	 */
 	public void anything() {
@@ -139,7 +146,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Message will be shown if the user selects the wrong choice.
 	 */
 	public void something() {
@@ -150,7 +157,7 @@ public class StageThree extends StageOne implements InterfaceOne, InterfaceTwo {
 
 	}
 
-	/*
+	/**
 	 * Message will be shown if the user selects the correct choice and the game
 	 * ends here.
 	 */

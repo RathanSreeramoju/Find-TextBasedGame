@@ -1,7 +1,10 @@
 package Textbasedgame;
 
-/*
- * Main class where we call the method to run the game 
+/**
+ * Main class where we call the method to run the game
+ * 
+ * @author rathan
+ *
  */
 public class Main {
 
